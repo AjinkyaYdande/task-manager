@@ -1,0 +1,25 @@
+.main-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.landing-page-buttons {
+  display: flex;
+  justify-content: space-between;
+  width: 14em;
+  position: relative;
+  top: 1em;
+  border: 0px solid red;
+}
+
+.btn {
+  cursor: pointer;
+  width: 7em;
+  height: 3em;
+  background-color: black;
+  border-radius: 2px;
+  border: 1px solid grey;
+}
