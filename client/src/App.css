@@ -23,3 +23,17 @@
   border-radius: 2px;
   border: 1px solid grey;
 }
+
+h1{
+  font-size: 3.5em;
+}
+
+h2{
+  color: rgb(119, 119, 119);
+}
+
+.landing-page-signup-btn{
+  background-color: darkgray;
+  color: black;
+  font-weight: 600;
+}
