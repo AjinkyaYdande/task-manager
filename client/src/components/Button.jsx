@@ -1,7 +1,5 @@
 const Button = ({ ...props }) => {
-    console.log(props, "btn props");
-
-    let { label, className = "btn" } = props;
+    console.log({ ...props }, "btn props");
 
     const onBtnClick = (e) => {
         console.log(e);
@@ -10,10 +8,10 @@ const Button = ({ ...props }) => {
     return (
         <>
             <button
-                className={className}
-                // onClick={(e) => onBtnClick(e)}
+                className={props.className}
+                onClick={props.onClick}
             >
-                {label}
+                {props.label}
             </button>
         </>
     )
