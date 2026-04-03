@@ -36,9 +36,10 @@
   :root {
     --text: #9ca3af;
     --text-h: #f3f4f6;
-    --bg: #0c0c0cd8;
+    /* --bg: #0c0c0cd8; */
+    --bg: url('/client/public/assets/images/bullseye-gradient.png');
     --border: #2e303a;
-    --code-bg: #1f2028;
+    /* --code-bg: #1f2028; */
     --accent: #c084fc;
     --accent-bg: rgba(192, 132, 252, 0.15);
     --accent-border: rgba(192, 132, 252, 0.5);

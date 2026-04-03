@@ -4,6 +4,7 @@
   align-items: center;
   flex-direction: column;
   height: 100vh;
+  background: url('/client/public/assets/images/bullseye-gradient.png');
 }
 
 .landing-page-buttons {
@@ -15,7 +16,15 @@
   border: 0px solid red;
 }
 
-.btn {
+h1 {
+  font-size: 3.5em;
+}
+
+h2 {
+  color: rgb(119, 119, 119);
+}
+
+.btn-landing-page {
   cursor: pointer;
   width: 7em;
   height: 3em;
@@ -24,15 +33,14 @@
   border: 1px solid grey;
 }
 
-h1{
-  font-size: 3.5em;
+.btn-landing-page:hover {
+  background-color: #000;
+  color: blueviolet;
+  font-weight: 600;
+  border: 1px solid blueviolet;
 }
 
-h2{
-  color: rgb(119, 119, 119);
-}
-
-.landing-page-signup-btn{
+.register-btn {
   background-color: darkgray;
   color: black;
   font-weight: 600;
