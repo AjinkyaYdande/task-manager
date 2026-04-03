@@ -12,3 +12,8 @@ Full stack task management application built with React and Node.js.
 - Node.js
 - Express
 - MongoDB
+
+# Concepts used
+- Custom Component
+- Custom Styling
+- React Router
