@@ -1,70 +1,17 @@
-import { useState } from 'react'
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import './App.css'
-import Button from './components/Button'
+import LandingPage from "./pages/LandingPage";
+import Login from "./pages/Login";
 
 function App() {
-
-  const redirectTo = (e, pageName) => {
-    console.log(e, pageName, "<====pageName");
-  }
-
-
   return (
     <>
-      <section className='main-section'>
-        <div className='heading'>
-          <h1>Work flows here.</h1>
-          <h2>Organize, prioritize, and crush your goals.</h2>
-        </div>
-        <div className='landing-page-buttons'>
-          <Button
-            label="SIGN IN"
-            className="btn landing-page-signin-btn"
-            onClick={(e) => redirectTo(e, "SIGN IN")}
-          />
-          <Button
-            label="SIGN UP"
-            className="btn landing-page-signup-btn"
-            onClick={(e) => redirectTo(e, "SIGN UP")}
-          />
-        </div>
-
-
-
-
-
-
-
-
-        {/* --------------------------------------- LATER -------------------------------------------------------------- */}
-
-        {/* <div className="flex-1 p-3 overflow-hidden">
-          <div data-line="true" className="text-[11px] font-mono leading-[1.7] whitespace-pre h-[19px] text-terminal-prompt"
-            // style="visibility: visible;"
-            >&gt; blackbox agent run --task refactor-auth</div>
-          <div data-line="true" className="text-[11px] font-mono leading-[1.7] whitespace-pre h-[19px] text-terminal-text"
-            // style="visibility: visible;"
-            >[INIT] Loading codebase context...</div>
-          <div data-line="true" className="text-[11px] font-mono leading-[1.7] whitespace-pre h-[19px] text-terminal-text"
-            // style="visibility: visible;"
-            >[SCAN] 47 files analyzed in 1.2s</div>
-          <div data-line="true" className="text-[11px] font-mono leading-[1.7] whitespace-pre h-[19px] text-terminal-text"
-            // style="visibility: visible;"
-            >[PLAN] Extracting auth middleware → /lib/auth.ts</div>
-          <div data-line="true" className="text-[11px] font-mono leading-[1.7] whitespace-pre h-[19px] text-terminal-text"
-            // style="visibility: visible;"
-            >[EDIT] src/routes/api.ts — removed inline checks</div>
-          <div data-line="true" className="text-[11px] font-mono leading-[1.7] whitespace-pre h-[19px] text-terminal-text"
-            // style="visibility: visible;"
-            >[EDIT] src/middleware/auth.ts — created guard</div>
-          <div data-line="true" className="text-[11px] font-mono leading-[1.7] whitespace-pre h-[19px] text-terminal-text"
-            // style="visibility: hidden;"
-            >[TEST] 12/12 passing</div>
-          <div data-line="true" className="text-[11px] font-mono leading-[1.7] whitespace-pre h-[19px] text-emerald-500/90"
-            // style="visibility: hidden;"
-            >[DONE] Refactor complete. PR ready.</div>
-        </div> */}
-      </section>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" exact element={<LandingPage />} />
+          <Route path="/login" element={<Login />} />
+        </Routes>
+      </BrowserRouter>
     </>
   )
 }
