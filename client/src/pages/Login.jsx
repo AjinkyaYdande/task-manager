@@ -9,13 +9,16 @@ const Login = () => {
 
     const [username, setUserName] = useState("");
     const [password, setPassword] = useState("");
+    const [isLogin, setIsLogin] = useState(true);
 
     return (
         <>
             <section className="login-section">
                 <div className="login-box">
                     <h3>Task Manager</h3>
-                    <h2>Log into your account</h2>
+
+                    {isLogin ? <h2> Log into your account </h2> :
+                        <h2>Create a free account</h2>}
                     <InputField
                         type="text"
                         minLength={8}
@@ -34,19 +37,23 @@ const Login = () => {
                         onChange={(e) => setPassword(e.target.value)}
                         value={password}
                     />
-
-                    <p>Forgot Password?</p>
+                    {isLogin ?
+                        <p>Forgot Password?</p> : <p></p>
+                    }
                     <Button
                         onClick={() => handleLogin()}
-                        label="LOGIN"
+                        label={isLogin ? "LOGIN" : "REGISTER"}
                         className="btn-landing-page"
 
                     />
                     <p>Don't have an account?
                         <span
                             className="register-link"
-                            onClick={() => navigate('/register')}
-                        >  Register</span></p>
+                            // onClick={() => navigate('/register')}
+                            onClick={() => setIsLogin(!isLogin)}
+                        > {isLogin ? "Register" : "Login"}
+                        </span>
+                    </p>
                 </div>
             </section>
         </>
