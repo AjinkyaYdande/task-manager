@@ -24,7 +24,11 @@ const LandingPage = () => {
                         onClick={() => navigate('/register')}
                     />
                 </div>
-
+                <div>
+                    <p className="sub-description">
+                        Manage your daily tasks efficiently
+                    </p>
+                </div>
                 {/* --------------------------------------- LATER -------------------------------------------------------------- */}
 
                 {/* <div className="flex-1 p-3 overflow-hidden">
