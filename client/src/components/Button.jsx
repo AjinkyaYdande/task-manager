@@ -1,10 +1,5 @@
 const Button = ({ ...props }) => {
-    console.log({ ...props }, "btn props");
-
-    const onBtnClick = (e) => {
-        console.log(e);
-    }
-
+    console.log(props.className, "btn props");
     return (
         <>
             <button
