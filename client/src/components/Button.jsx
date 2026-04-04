@@ -7,6 +7,12 @@ const Button = ({ ...props }) => {
                 onClick={props.onClick}
             >
                 {props.label}
+                {props.iconPath ?
+                    <img
+                        src={props.iconPath}
+                        alt={props.imgAlt}
+                    />
+                    : ""}
             </button>
         </>
     )
