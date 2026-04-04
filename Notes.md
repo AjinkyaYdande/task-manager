@@ -5,3 +5,8 @@
 
 #All tasks
 - Use virtualization to load only data as per screen size
+
+#Context API
+- Create Context
+- Create Provider also pass state
+- Use Context
