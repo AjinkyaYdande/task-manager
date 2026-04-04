@@ -46,14 +46,22 @@ const Login = () => {
                         className="btn-landing-page"
 
                     />
-                    <p>Don't have an account?
-                        <span
-                            className="register-link"
-                            // onClick={() => navigate('/register')}
-                            onClick={() => setIsLogin(!isLogin)}
-                        > {isLogin ? "Register" : "Login"}
-                        </span>
-                    </p>
+                    {isLogin ?
+                        <p>Don't have an account?
+                            <span
+                                className="register-link"
+                                onClick={() => setIsLogin(!isLogin)}
+                            > Register
+                            </span>
+                        </p> :
+                        <p>Already have an account?
+                            <span
+                                className="register-link"
+                                onClick={() => setIsLogin(!isLogin)}
+                            > Login
+                            </span>
+                        </p>
+                    }
                 </div>
             </section>
         </>
