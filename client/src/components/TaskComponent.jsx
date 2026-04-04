@@ -1,8 +1,14 @@
 import Button from '../components/Button';
+import { useModal } from '../context/ModalContext';
 const TaskComoponent = () => {
+
+    const { openModal } = useModal();
+    console.log(openModal, "taskCom");
+    
     const addNewTask = () => {
         alert("Added new task");
     }
+
     return (
         <>
             <section className="task-section">
@@ -12,7 +18,8 @@ const TaskComoponent = () => {
                     icon="add-new"
                     imgAlt="add-new"
                     iconPath="/assets/icons/add-new-default.png"
-                    onClick={() => addNewTask()}
+                    // onClick={() => addNewTask()}
+                    onClick={openModal}
                 />
                 <div className='task-table-div'>
                     <table border={0} className='task-table'>
