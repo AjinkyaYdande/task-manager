@@ -20,13 +20,13 @@ app.get("/", (req, res) => {
   res.send("API is running...");
 });
 
-// Import routes
-const authRoutes = require("./routes/authRoutes");
-const taskRoutes = require("./routes/taskRoutes");
+// // Import routes
+// const authRoutes = require("./routes/authRoutes");
+// const taskRoutes = require("./routes/taskRoutes");
 
 // Use routes
-app.use("/api/auth", authRoutes);
-app.use("/api/tasks", taskRoutes);
+// app.use("/api/auth", authRoutes);
+// app.use("/api/tasks", taskRoutes);
 
 // Server start
 const PORT = process.env.PORT || 5000;
