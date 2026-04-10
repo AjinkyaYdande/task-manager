@@ -21,11 +21,11 @@ app.get("/", (req, res) => {
 });
 
 // // Import routes
-// const authRoutes = require("./routes/authRoutes");
+const authRoutes = require("./routes/authRoutes");
 const taskRoutes = require("./routes/taskRoutes");
 
 // Use routes
-// app.use("/api/auth", authRoutes);
+app.use("/api/auth", authRoutes);
 app.use("/api/tasks", taskRoutes);
 
 // Server start
