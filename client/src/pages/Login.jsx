@@ -11,6 +11,47 @@ const Login = () => {
     const [password, setPassword] = useState("");
     const [isLogin, setIsLogin] = useState(true);
 
+    async function handleLogin() {
+        try {
+            const API_URL = import.meta.env.VITE_APP_URL;
+
+            if (!isLogin) {
+                
+                const response = await fetch(`${API_URL}/auth/register`, {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify({
+                        email: username,
+                        password
+                    })
+                });
+
+                const result = await response.json();
+                console.log(result, "Register result");
+
+            } else {
+                
+                const response = await fetch(`${API_URL}/auth/login`, {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify({
+                        email: username,
+                        password
+                    })
+                });
+
+                const result = await response.json();
+                console.log(result, "Login result");
+            }
+
+        } catch (error) {
+            console.log(error, "error");
+        }
+    }
     return (
         <>
             <section className="login-section">
