@@ -10,7 +10,7 @@ export const ModalProvider = ({ children }) => {
     const closeModal = () => setIsOpen(false);
 
     return (
-        console.log("modelContext =>", isOpen, openModal, closeModal),
+        
         <ModalContext.Provider value={{ isOpen, openModal, closeModal }}>
             {children}
         </ModalContext.Provider>
