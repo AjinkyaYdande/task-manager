@@ -1,13 +1,20 @@
+import { useState } from 'react';
 import Button from '../components/Button';
 import { useModal } from '../context/ModalContext';
-const TaskComoponent = () => {
-
+import { useEffect } from 'react';
+const TaskComoponent = (props) => {
+    console.log(props, "props taksComponent")
     const { openModal } = useModal();
-    console.log(openModal, "taskCom");
-    
+
+    const [data, setData] = useState([]);
+
     const addNewTask = () => {
         alert("Added new task");
     }
+
+    useEffect(() => {
+        setData(props.data);
+    }, [props.data]);
 
     return (
         <>
@@ -32,176 +39,30 @@ const TaskComoponent = () => {
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td>1</td>
-                                <td>MERN App</td>
-                                <td>WIP</td>
-                                <td>
-                                    <div>
-                                        <Button
-                                            className="action-btn"
-                                            iconPath="/assets/icons/pencil.png"
-                                        />
-                                        <Button
-                                            className="action-btn"
-                                            iconPath="/assets/icons/delete.png"
-                                        />
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>2</td>
-                                <td>JS</td>
-                                <td>Pending</td>
-                                <td>
-                                    <div>
-                                        <Button
-                                            className="action-btn"
-                                            iconPath="/assets/icons/pencil.png"
-                                        />
-                                        <Button
-                                            className="action-btn"
-                                            iconPath="/assets/icons/delete.png"
-                                        />
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>3</td>
-                                <td>DSA</td>
-                                <td>Done</td>
-                                <td>
-                                    <div>
-                                        <Button
-                                            className="action-btn"
-                                            iconPath="/assets/icons/pencil.png"
-                                        />
-                                        <Button
-                                            className="action-btn"
-                                            iconPath="/assets/icons/delete.png"
-                                        />
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>1</td>
-                                <td>MERN App</td>
-                                <td>WIP</td>
-                                <td>
-                                    <div>
-                                        <Button
-                                            className="action-btn"
-                                            iconPath="/assets/icons/pencil.png"
-                                        />
-                                        <Button
-                                            className="action-btn"
-                                            iconPath="/assets/icons/delete.png"
-                                        />
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>2</td>
-                                <td>JS</td>
-                                <td>Pending</td>
-                                <td>
-                                    <div>
-                                        <Button
-                                            className="action-btn"
-                                            iconPath="/assets/icons/pencil.png"
-                                        />
-                                        <Button
-                                            className="action-btn"
-                                            iconPath="/assets/icons/delete.png"
-                                        />
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>3</td>
-                                <td>DSA</td>
-                                <td>Done</td>
-                                <td>
-                                    <div>
-                                        <Button
-                                            className="action-btn"
-                                            iconPath="/assets/icons/pencil.png"
-                                        />
-                                        <Button
-                                            className="action-btn"
-                                            iconPath="/assets/icons/delete.png"
-                                        />
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>1</td>
-                                <td>MERN App</td>
-                                <td>WIP</td>
-                                <td>
-                                    <div>
-                                        <Button
-                                            className="action-btn"
-                                            iconPath="/assets/icons/pencil.png"
-                                        />
-                                        <Button
-                                            className="action-btn"
-                                            iconPath="/assets/icons/delete.png"
-                                        />
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>2</td>
-                                <td>JS</td>
-                                <td>Pending</td>
-                                <td>
-                                    <div>
-                                        <Button
-                                            className="action-btn"
-                                            iconPath="/assets/icons/pencil.png"
-                                        />
-                                        <Button
-                                            className="action-btn"
-                                            iconPath="/assets/icons/delete.png"
-                                        />
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>3</td>
-                                <td>DSA</td>
-                                <td>Done</td>
-                                <td>
-                                    <div>
-                                        <Button
-                                            className="action-btn"
-                                            iconPath="/assets/icons/pencil.png"
-                                        />
-                                        <Button
-                                            className="action-btn"
-                                            iconPath="/assets/icons/delete.png"
-                                        />
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>1</td>
-                                <td>MERN App</td>
-                                <td>WIP</td>
-                                <td>
-                                    <div>
-                                        <Button
-                                            className="action-btn"
-                                            iconPath="/assets/icons/pencil.png"
-                                        />
-                                        <Button
-                                            className="action-btn"
-                                            iconPath="/assets/icons/delete.png"
-                                        />
-                                    </div>
-                                </td>
-                            </tr>
+
+                            {data.map((item, index) => {
+                                console.log(item, "item", index);
+                                return (
+                                    <tr>
+                                        <td>{index + 1}</td>
+                                        <td>{item.task}</td>
+                                        <td>{item.status}</td>
+                                        <td>
+                                            <div>
+                                                <Button
+                                                    className="action-btn"
+                                                    iconPath="/assets/icons/pencil.png"
+                                                />
+                                                <Button
+                                                    className="action-btn"
+                                                    iconPath="/assets/icons/delete.png"
+                                                />
+                                            </div>
+                                        </td>
+                                    </tr>
+                                )
+                            })}
+
 
                         </tbody>
 
