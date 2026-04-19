@@ -6,13 +6,12 @@ const taskSchema = new mongoose.Schema(
             type: mongoose.Schema.Types.ObjectId,
             ref: "User"
         },
-        title: {
+        task: {
             type: String,
             required: true,
         },
-        completed: {
-            type: Boolean,
-            default: false,
+        status: {
+            type: String,
         }
     },
     { timestamps: true },
