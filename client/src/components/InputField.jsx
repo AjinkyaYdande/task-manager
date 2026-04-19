@@ -1,5 +1,4 @@
 const InputField = ({ ...props }) => {
-    console.log({ ...props }, "inputF");
     return (
         <>
             <input

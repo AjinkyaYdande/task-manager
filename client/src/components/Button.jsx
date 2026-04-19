@@ -1,5 +1,4 @@
 const Button = ({ ...props }) => {
-    console.log(props.className, "btn props");
     return (
         <>
             <button
