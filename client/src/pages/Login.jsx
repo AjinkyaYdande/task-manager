@@ -16,7 +16,7 @@ const Login = () => {
             const API_URL = import.meta.env.VITE_APP_URL;
 
             if (!isLogin) {
-                
+
                 const response = await fetch(`${API_URL}/auth/register`, {
                     method: "POST",
                     headers: {
@@ -30,9 +30,10 @@ const Login = () => {
 
                 const result = await response.json();
                 console.log(result, "Register result");
+                alert(result.message);
 
             } else {
-                
+
                 const response = await fetch(`${API_URL}/auth/login`, {
                     method: "POST",
                     headers: {
@@ -46,6 +47,11 @@ const Login = () => {
 
                 const result = await response.json();
                 console.log(result, "Login result");
+                if (response.ok) {
+                    navigate("/dashboard");
+                } else {
+                    alert("ss");  
+                }
             }
 
         } catch (error) {
